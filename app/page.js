@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Counter from './component/Counter';
 import Stats from './component/Stats';
 import Header from './component/Header';
+import { AboutRedux } from './component/AboutRedux';
 
 const initialState = [
   {
@@ -53,6 +54,7 @@ export default function Home() {
   return (
     <div className="test">
       <Header />
+      <AboutRedux />
       {state.map(count =>
         <Counter
           key={count.id}
