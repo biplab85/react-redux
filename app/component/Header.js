@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import styles from '../src/theme/Header.module.scss'
 import Link from 'next/link';
+import DropdownMenu from './DropdownMenu';
 
 
 
@@ -15,11 +16,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='w-1/2 flex items-center justify-end'>
-                    <ul className='flex items-center justify-end'>
-                        <li>
-                            <Link className='text-[#7287a5] hover:text-[#4e607a]' href="ReduxFundamental">Redux Fundamental</Link>
-                        </li>
-                    </ul>
+                    <DropdownMenu />
                 </div>
 
             </div>

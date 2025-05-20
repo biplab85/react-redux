@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const AboutRedux = () => {
     return (
-        <div className='mb-20 w-full border-b border-[#1d2532]'>
+        <div className='mb-20 w-full'>
             <div className='container m-auto'>
                 <div className='block md:flex items-center'>
                     <div className="w-full md:w-3/5 items-center mb-10">

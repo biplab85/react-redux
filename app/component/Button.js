@@ -2,7 +2,7 @@
 export default function Button({ children, handler }) {
     return (
         <button
-            className="text-[16px] rounded-2xl bg-blue-500 p-3 w-[150px] m-2 cursor-pointer"
+            className="flex items-center justify-center  text-[16px] w-[80px] text-center rounded-2xl bg-blue-500 p-3 cursor-pointer"
             onClick={handler}
         >
             {children}
