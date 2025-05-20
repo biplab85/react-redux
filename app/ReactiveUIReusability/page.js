@@ -1,46 +1,19 @@
 'use client';
 import { useState } from 'react';
-import Counter from '../component/Counter';
-import Stats from '../component/Stats';
-import CodeViewer from '../component/CodeViewer';
 import { RightAssideMenu } from '../component/RightAssideMenu';
+import Counter from './Counter';
+import CodeViewer from './CodeViewer';
 import { FaCode } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
-const initialState = [
-    { id: 1, count: 0 },
-    { id: 2, count: 0 },
-];
 
 export default function Home() {
-    const [state, setstate] = useState(initialState);
     const [showCode, setShowCode] = useState(false);
-
-    const totalCount = () =>
-        state.reduce((total, counter) => total + counter.count, 0);
-
-    const increment = (id) => {
-        const updatedCounter = state.map((c) =>
-            c.id === id ? { ...c, count: c.count + 1 } : { ...c }
-        );
-        setstate(updatedCounter);
-    };
-
-    const decrement = (id) => {
-        const updatedCounter = state.map((c) =>
-            c.id === id ? { ...c, count: c.count - 1 } : { ...c }
-        );
-        setstate(updatedCounter);
-    };
 
     return (
         <div className="p-3 container m-auto flex items-start justify-between">
 
             <div className="w-full relative">
-                <h3 className="mb-8 text-center text-3xl text-[#7287a5]">
-                    Simple counter application
-                </h3>
-
                 {/* Toggle code viewer button (FaCode icon) */}
                 {!showCode && (
                     <button
@@ -50,6 +23,9 @@ export default function Home() {
                         <FaCode />
                     </button>
                 )}
+                <h3 className="mb-8 text-center text-3xl text-[#7287a5]">
+                    1.2 Reactive UI and Reusability
+                </h3>
 
                 {/* Show either CodeViewer or Main content */}
                 {showCode ? (
@@ -63,21 +39,13 @@ export default function Home() {
                         <CodeViewer />
                     </div>
                 ) : (
-                    <div className='flex'>
-                        <div className="rounded-xl border border-[#1d2532] shadow w-2/2 p-5 m-auto">
-                            {state.map((count) => (
-                                <Counter
-                                    key={count.id}
-                                    id={count.id}
-                                    count={count.count}
-                                    increment={increment}
-                                    decrement={decrement}
-                                />
-                            ))}
-                        </div>
-                        <Stats count={totalCount()} />
+                    <div className=''>
+                        <Counter />
+                        <Counter />
+                        <Counter />
                     </div>
                 )}
+
             </div>
 
             {/* Right menu stays visible */}
